@@ -13,7 +13,7 @@ namespace TestConsole
             ActiveDirectory.IdllActiveDirectory obj = new ActiveDirectory.DllActiveDirectory();
 
             code = obj.UnlockUser("1515899","252525" );
-            Console.WriteLine("ques trae code: {0}", code);
+            Console.WriteLine("Ahora trae code: {0}", code);
              Console.ReadKey();
         }
     }
