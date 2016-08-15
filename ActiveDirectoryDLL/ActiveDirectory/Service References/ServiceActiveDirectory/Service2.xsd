@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://ActiveDirectory/Operations" elementFormDefault="qualified" targetNamespace="https://ActiveDirectory/Operations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ActiveDirectoryRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userAuthenticate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passwordAuthenticate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numberEmployee" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="confirmNip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="flag" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="domainActDir" nillable="true" type="xs:string" />
+  <xs:element name="password" nillable="true" type="xs:string" />
+  <xs:element name="passwordActDir" nillable="true" type="xs:string" />
+  <xs:element name="pathActDir" nillable="true" type="xs:string" />
+  <xs:element name="userService" nillable="true" type="xs:string" />
+  <xs:element name="usernameActDir" nillable="true" type="xs:string" />
+  <xs:element name="ActiveDirectoryInfoObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userService" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numberEmployee" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="confirmNip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

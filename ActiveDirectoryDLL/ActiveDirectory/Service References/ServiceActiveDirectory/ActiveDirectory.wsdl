@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ActiveDirectory" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IActiveDirectory_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://mga-bj05-00/wsActiveDirectory/Service.svc?xsd=xsd0" namespace="https://ActiveDirectory/Operations" />
+      <xsd:import schemaLocation="http://mga-bj05-00/wsActiveDirectory/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ActiveDirectory" />
+      <xsd:import schemaLocation="http://mga-bj05-00/wsActiveDirectory/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ActiveDirectoryRequest">
+    <wsdl:part xmlns:q1="https://ActiveDirectory/Operations" name="parameters" element="q1:ActiveDirectoryRequest" />
+  </wsdl:message>
+  <wsdl:message name="ActiveDirectoryRequest_Headers">
+    <wsdl:part xmlns:q2="https://ActiveDirectory/Operations" name="domainActDir" element="q2:domainActDir" />
+    <wsdl:part xmlns:q3="https://ActiveDirectory/Operations" name="password" element="q3:password" />
+    <wsdl:part xmlns:q4="https://ActiveDirectory/Operations" name="passwordActDir" element="q4:passwordActDir" />
+    <wsdl:part xmlns:q5="https://ActiveDirectory/Operations" name="pathActDir" element="q5:pathActDir" />
+    <wsdl:part xmlns:q6="https://ActiveDirectory/Operations" name="userService" element="q6:userService" />
+    <wsdl:part xmlns:q7="https://ActiveDirectory/Operations" name="usernameActDir" element="q7:usernameActDir" />
+  </wsdl:message>
+  <wsdl:message name="ActiveDirectoryInfo">
+    <wsdl:part xmlns:q8="https://ActiveDirectory/Operations" name="parameters" element="q8:ActiveDirectoryInfoObject" />
+  </wsdl:message>
+  <wsdl:message name="IActiveDirectory_ExistsNipEmployee_FaultExceptionActiveFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/ActiveDirectory" name="detail" element="q9:FaultExceptionActive" />
+  </wsdl:message>
+  <wsdl:message name="IActiveDirectory_InsertNipEmployee_FaultExceptionActiveFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/ActiveDirectory" name="detail" element="q10:FaultExceptionActive" />
+  </wsdl:message>
+  <wsdl:message name="IActiveDirectory_GetNumberEmployee_FaultExceptionActiveFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/ActiveDirectory" name="detail" element="q11:FaultExceptionActive" />
+  </wsdl:message>
+  <wsdl:message name="IActiveDirectory_ExistsEmployee_FaultExceptionActiveFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/ActiveDirectory" name="detail" element="q12:FaultExceptionActive" />
+  </wsdl:message>
+  <wsdl:message name="IActiveDirectory_UnlockEmployee_FaultExceptionActiveFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/ActiveDirectory" name="detail" element="q13:FaultExceptionActive" />
+  </wsdl:message>
+  <wsdl:message name="IActiveDirectory_AuthenticateEmployee_FaultExceptionActiveFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/ActiveDirectory" name="detail" element="q14:FaultExceptionActive" />
+  </wsdl:message>
+  <wsdl:message name="IActiveDirectory_ExistsEmployeeCf_FaultExceptionActiveFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/ActiveDirectory" name="detail" element="q15:FaultExceptionActive" />
+  </wsdl:message>
+  <wsdl:message name="IActiveDirectory_InsertEmployeeCf_FaultExceptionActiveFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/ActiveDirectory" name="detail" element="q16:FaultExceptionActive" />
+  </wsdl:message>
+  <wsdl:message name="IActiveDirectory_UpdateEmployeeCf_FaultExceptionActiveFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/ActiveDirectory" name="detail" element="q17:FaultExceptionActive" />
+  </wsdl:message>
+  <wsdl:message name="IActiveDirectory_LicenseKey_FaultExceptionActiveFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/ActiveDirectory" name="detail" element="q18:FaultExceptionActive" />
+  </wsdl:message>
+  <wsdl:portType name="IActiveDirectory">
+    <wsdl:operation name="ExistsNipEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActiveDirectory/ExistsNipEmployee" name="ActiveDirectoryRequest" message="tns:ActiveDirectoryRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActiveDirectory/ExistsNipEmployeeResponse" name="ActiveDirectoryInfo" message="tns:ActiveDirectoryInfo" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IActiveDirectory/ExistsNipEmployeeFaultExceptionActiveFault" name="FaultExceptionActiveFault" message="tns:IActiveDirectory_ExistsNipEmployee_FaultExceptionActiveFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNipEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActiveDirectory/InsertNipEmployee" name="ActiveDirectoryRequest" message="tns:ActiveDirectoryRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActiveDirectory/InsertNipEmployeeResponse" name="ActiveDirectoryInfo" message="tns:ActiveDirectoryInfo" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IActiveDirectory/InsertNipEmployeeFaultExceptionActiveFault" name="FaultExceptionActiveFault" message="tns:IActiveDirectory_InsertNipEmployee_FaultExceptionActiveFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActiveDirectory/GetNumberEmployee" name="ActiveDirectoryRequest" message="tns:ActiveDirectoryRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActiveDirectory/GetNumberEmployeeResponse" name="ActiveDirectoryInfo" message="tns:ActiveDirectoryInfo" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IActiveDirectory/GetNumberEmployeeFaultExceptionActiveFault" name="FaultExceptionActiveFault" message="tns:IActiveDirectory_GetNumberEmployee_FaultExceptionActiveFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActiveDirectory/ExistsEmployee" name="ActiveDirectoryRequest" message="tns:ActiveDirectoryRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActiveDirectory/ExistsEmployeeResponse" name="ActiveDirectoryInfo" message="tns:ActiveDirectoryInfo" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IActiveDirectory/ExistsEmployeeFaultExceptionActiveFault" name="FaultExceptionActiveFault" message="tns:IActiveDirectory_ExistsEmployee_FaultExceptionActiveFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActiveDirectory/UnlockEmployee" name="ActiveDirectoryRequest" message="tns:ActiveDirectoryRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActiveDirectory/UnlockEmployeeResponse" name="ActiveDirectoryInfo" message="tns:ActiveDirectoryInfo" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IActiveDirectory/UnlockEmployeeFaultExceptionActiveFault" name="FaultExceptionActiveFault" message="tns:IActiveDirectory_UnlockEmployee_FaultExceptionActiveFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActiveDirectory/AuthenticateEmployee" name="ActiveDirectoryRequest" message="tns:ActiveDirectoryRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActiveDirectory/AuthenticateEmployeeResponse" name="ActiveDirectoryInfo" message="tns:ActiveDirectoryInfo" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IActiveDirectory/AuthenticateEmployeeFaultExceptionActiveFault" name="FaultExceptionActiveFault" message="tns:IActiveDirectory_AuthenticateEmployee_FaultExceptionActiveFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsEmployeeCf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActiveDirectory/ExistsEmployeeCf" name="ActiveDirectoryRequest" message="tns:ActiveDirectoryRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActiveDirectory/ExistsEmployeeCfResponse" name="ActiveDirectoryInfo" message="tns:ActiveDirectoryInfo" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IActiveDirectory/ExistsEmployeeCfFaultExceptionActiveFault" name="FaultExceptionActiveFault" message="tns:IActiveDirectory_ExistsEmployeeCf_FaultExceptionActiveFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmployeeCf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActiveDirectory/InsertEmployeeCf" name="ActiveDirectoryRequest" message="tns:ActiveDirectoryRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActiveDirectory/InsertEmployeeCfResponse" name="ActiveDirectoryInfo" message="tns:ActiveDirectoryInfo" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IActiveDirectory/InsertEmployeeCfFaultExceptionActiveFault" name="FaultExceptionActiveFault" message="tns:IActiveDirectory_InsertEmployeeCf_FaultExceptionActiveFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeCf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActiveDirectory/UpdateEmployeeCf" name="ActiveDirectoryRequest" message="tns:ActiveDirectoryRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActiveDirectory/UpdateEmployeeCfResponse" name="ActiveDirectoryInfo" message="tns:ActiveDirectoryInfo" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IActiveDirectory/UpdateEmployeeCfFaultExceptionActiveFault" name="FaultExceptionActiveFault" message="tns:IActiveDirectory_UpdateEmployeeCf_FaultExceptionActiveFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LicenseKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActiveDirectory/LicenseKey" name="ActiveDirectoryRequest" message="tns:ActiveDirectoryRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActiveDirectory/LicenseKeyResponse" name="ActiveDirectoryInfo" message="tns:ActiveDirectoryInfo" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IActiveDirectory/LicenseKeyFaultExceptionActiveFault" name="FaultExceptionActiveFault" message="tns:IActiveDirectory_LicenseKey_FaultExceptionActiveFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IActiveDirectory" type="tns:IActiveDirectory">
+    <wsp:PolicyReference URI="#WSHttpBinding_IActiveDirectory_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExistsNipEmployee">
+      <soap12:operation soapAction="http://tempuri.org/IActiveDirectory/ExistsNipEmployee" style="document" />
+      <wsdl:input name="ActiveDirectoryRequest">
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="domainActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="password" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="passwordActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="pathActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="userService" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="usernameActDir" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActiveDirectoryInfo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultExceptionActiveFault">
+        <soap12:fault use="literal" name="FaultExceptionActiveFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNipEmployee">
+      <soap12:operation soapAction="http://tempuri.org/IActiveDirectory/InsertNipEmployee" style="document" />
+      <wsdl:input name="ActiveDirectoryRequest">
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="domainActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="password" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="passwordActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="pathActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="userService" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="usernameActDir" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActiveDirectoryInfo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultExceptionActiveFault">
+        <soap12:fault use="literal" name="FaultExceptionActiveFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberEmployee">
+      <soap12:operation soapAction="http://tempuri.org/IActiveDirectory/GetNumberEmployee" style="document" />
+      <wsdl:input name="ActiveDirectoryRequest">
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="domainActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="password" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="passwordActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="pathActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="userService" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="usernameActDir" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActiveDirectoryInfo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultExceptionActiveFault">
+        <soap12:fault use="literal" name="FaultExceptionActiveFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExistsEmployee">
+      <soap12:operation soapAction="http://tempuri.org/IActiveDirectory/ExistsEmployee" style="document" />
+      <wsdl:input name="ActiveDirectoryRequest">
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="domainActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="password" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="passwordActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="pathActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="userService" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="usernameActDir" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActiveDirectoryInfo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultExceptionActiveFault">
+        <soap12:fault use="literal" name="FaultExceptionActiveFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockEmployee">
+      <soap12:operation soapAction="http://tempuri.org/IActiveDirectory/UnlockEmployee" style="document" />
+      <wsdl:input name="ActiveDirectoryRequest">
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="domainActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="password" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="passwordActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="pathActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="userService" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="usernameActDir" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActiveDirectoryInfo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultExceptionActiveFault">
+        <soap12:fault use="literal" name="FaultExceptionActiveFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateEmployee">
+      <soap12:operation soapAction="http://tempuri.org/IActiveDirectory/AuthenticateEmployee" style="document" />
+      <wsdl:input name="ActiveDirectoryRequest">
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="domainActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="password" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="passwordActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="pathActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="userService" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="usernameActDir" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActiveDirectoryInfo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultExceptionActiveFault">
+        <soap12:fault use="literal" name="FaultExceptionActiveFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExistsEmployeeCf">
+      <soap12:operation soapAction="http://tempuri.org/IActiveDirectory/ExistsEmployeeCf" style="document" />
+      <wsdl:input name="ActiveDirectoryRequest">
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="domainActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="password" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="passwordActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="pathActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="userService" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="usernameActDir" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActiveDirectoryInfo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultExceptionActiveFault">
+        <soap12:fault use="literal" name="FaultExceptionActiveFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmployeeCf">
+      <soap12:operation soapAction="http://tempuri.org/IActiveDirectory/InsertEmployeeCf" style="document" />
+      <wsdl:input name="ActiveDirectoryRequest">
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="domainActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="password" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="passwordActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="pathActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="userService" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="usernameActDir" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActiveDirectoryInfo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultExceptionActiveFault">
+        <soap12:fault use="literal" name="FaultExceptionActiveFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeCf">
+      <soap12:operation soapAction="http://tempuri.org/IActiveDirectory/UpdateEmployeeCf" style="document" />
+      <wsdl:input name="ActiveDirectoryRequest">
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="domainActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="password" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="passwordActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="pathActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="userService" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="usernameActDir" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActiveDirectoryInfo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultExceptionActiveFault">
+        <soap12:fault use="literal" name="FaultExceptionActiveFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LicenseKey">
+      <soap12:operation soapAction="http://tempuri.org/IActiveDirectory/LicenseKey" style="document" />
+      <wsdl:input name="ActiveDirectoryRequest">
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="domainActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="password" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="passwordActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="pathActDir" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="userService" use="literal" />
+        <soap12:header message="tns:ActiveDirectoryRequest_Headers" part="usernameActDir" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActiveDirectoryInfo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultExceptionActiveFault">
+        <soap12:fault use="literal" name="FaultExceptionActiveFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ActiveDirectory">
+    <wsdl:port name="WSHttpBinding_IActiveDirectory" binding="tns:WSHttpBinding_IActiveDirectory">
+      <soap12:address location="http://mga-bj05-00/wsActiveDirectory/Service.svc/ActiveDirectory" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://mga-bj05-00/wsActiveDirectory/Service.svc/ActiveDirectory</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

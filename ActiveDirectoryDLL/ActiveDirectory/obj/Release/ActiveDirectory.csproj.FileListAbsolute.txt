@@ -1,0 +1,5 @@
+E:\ActiveDirectoryDLL\ActiveDirectory\bin\Release\ActiveDirectory.dll
+E:\ActiveDirectoryDLL\ActiveDirectory\bin\Release\ActiveDirectory.pdb
+E:\ActiveDirectoryDLL\ActiveDirectory\obj\Release\ActiveDirectory.dll
+E:\ActiveDirectoryDLL\ActiveDirectory\obj\Release\ActiveDirectory.pdb
+E:\ActiveDirectoryDLL\ActiveDirectory\bin\Release\ActiveDirectory.tlb

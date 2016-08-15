@@ -1,0 +1,21 @@
+1. Crear el certificado.
+
+makecert -n "CN=ACTDir" -r -sv ACTDir.pvk ACTDir.cer
+Password 6ActDir1
+
+makecert -sk ActDirCer -iv ACTDir.pvk -n "CN=CTIPrueba" -ic ACTDir.cer -sr localmachine -ss my -sky exchange –pe
+
+2. open mmc
+
+File-Add/Remove snap-in/Certifies/Add/Computer account/Finish
+
+3. Add to Default Web Site/Bindings.../Add/https/SSL Certificate/Selected CTIPrueba.
+
+4. Add to AplicationWeb for example BasicHttpAuthentication. SSL-Check Require SSL-Apply
+Basic Authentication config to Enable
+
+5. Add in mmc - Trusted Root Certification Authorities/Certifies
+/All Task/Import/File name/Selected file .cer/
+Certificate store:Trusted Root Certification Authorities
+
+c:\windows\system32

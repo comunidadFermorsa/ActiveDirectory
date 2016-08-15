@@ -1,0 +1,5 @@
+E:\ActiveDirectoryDLL\ActiveDirectory\bin\Debug\ActiveDirectory.dll
+E:\ActiveDirectoryDLL\ActiveDirectory\bin\Debug\ActiveDirectory.pdb
+E:\ActiveDirectoryDLL\ActiveDirectory\bin\Debug\ActiveDirectory.tlb
+E:\ActiveDirectoryDLL\ActiveDirectory\obj\Debug\ActiveDirectory.dll
+E:\ActiveDirectoryDLL\ActiveDirectory\obj\Debug\ActiveDirectory.pdb

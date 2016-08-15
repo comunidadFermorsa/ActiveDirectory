@@ -1,0 +1,24 @@
+En el equipo de desarrollo
+1. Posicionarme en el siguiente directorio:
+C:\Windows\Microsoft.NET\Framework\v4.0.30319
+
+2. Ejecutar comando
+regasm C:\RightNow\RightNow.dll /tlb:C:\RightNow\RightNow.tlb /codebase
+
+
+3. Desintalar
+regasm /u C:\RightNow\RightNow.dll /tlb /codebase
+
+
+En el servidor
+
+1. Posicionarme en el siguiente directorio:
+C:\Windows\Microsoft.NET\Framework\v4.0.30319
+
+2. Ejecutar comando
+regasm E:\RightNow\RightNow.dll /tlb:E:\RightNow\RightNow.tlb /codebase
+
+
+3. Desintalar
+regasm /u E:\RightNow\RightNow.dll /tlb /codebase
+

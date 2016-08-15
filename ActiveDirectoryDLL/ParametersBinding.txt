@@ -1,0 +1,31 @@
+ System.ServiceModel.WSHttpBinding wsHTTPSBinding = new System.ServiceModel.WSHttpBinding();
+            wsHTTPSBinding.Name = "HIBridge_SSLBinding";
+            wsHTTPSBinding.OpenTimeout = TimeSpan.FromMinutes(1);
+            wsHTTPSBinding.CloseTimeout = TimeSpan.FromMinutes(1);
+            wsHTTPSBinding.SendTimeout = TimeSpan.FromMinutes(1);
+            wsHTTPSBinding.ReceiveTimeout = TimeSpan.FromMinutes(10);
+            wsHTTPSBinding.BypassProxyOnLocal = false;
+            wsHTTPSBinding.TransactionFlow = false;
+            wsHTTPSBinding.HostNameComparisonMode = System.ServiceModel.HostNameComparisonMode.StrongWildcard;
+            wsHTTPSBinding.MaxBufferPoolSize = 2147483647;
+            wsHTTPSBinding.MaxReceivedMessageSize = 2147483647;
+            wsHTTPSBinding.MessageEncoding = System.ServiceModel.WSMessageEncoding.Text;
+            wsHTTPSBinding.TextEncoding = Encoding.UTF8;
+            wsHTTPSBinding.UseDefaultWebProxy = true;
+            wsHTTPSBinding.AllowCookies = false;
+
+
+            wsHTTPSBinding.ReliableSession.Ordered = true;
+            wsHTTPSBinding.ReliableSession.InactivityTimeout = TimeSpan.FromMinutes(10);
+            wsHTTPSBinding.ReliableSession.Enabled = false;
+
+            wsHTTPSBinding.Security.Mode = System.ServiceModel.SecurityMode.TransportWithMessageCredential;
+            wsHTTPSBinding.Security.Transport.ClientCredentialType = System.ServiceModel.HttpClientCredentialType.Certificate;
+            wsHTTPSBinding.Security.Transport.ProxyCredentialType = System.ServiceModel.HttpProxyCredentialType.None;
+            wsHTTPSBinding.Security.Transport.Realm = "";
+            wsHTTPSBinding.Security.Message.ClientCredentialType = System.ServiceModel.MessageCredentialType.UserName;
+            wsHTTPSBinding.Security.Message.NegotiateServiceCredential = true;
+            wsHTTPSBinding.Security.Message.EstablishSecurityContext = true;
+            System.ServiceModel.EndpointAddress endpointAddress = null;
+
+            endpointAddress = new System.ServiceModel.EndpointAddress(string.Format("https://10.50.1.85:1345/HI/HIService.svc/ws");

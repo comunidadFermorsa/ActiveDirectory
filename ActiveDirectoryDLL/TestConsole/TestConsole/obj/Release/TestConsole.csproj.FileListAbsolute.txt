@@ -1,0 +1,7 @@
+E:\ActiveDirectoryDLL\TestConsole\TestConsole\bin\Release\TestConsole.exe
+E:\ActiveDirectoryDLL\TestConsole\TestConsole\bin\Release\TestConsole.pdb
+E:\ActiveDirectoryDLL\TestConsole\TestConsole\bin\Release\ActiveDirectory.dll
+E:\ActiveDirectoryDLL\TestConsole\TestConsole\bin\Release\ActiveDirectory.pdb
+E:\ActiveDirectoryDLL\TestConsole\TestConsole\obj\Release\TestConsole.csprojResolveAssemblyReference.cache
+E:\ActiveDirectoryDLL\TestConsole\TestConsole\obj\Release\TestConsole.exe
+E:\ActiveDirectoryDLL\TestConsole\TestConsole\obj\Release\TestConsole.pdb
