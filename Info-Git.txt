@@ -1,0 +1,367 @@
+https://github.com/fermorsa/meetupGit.git al final se usan juntos...
+
+fermorsa@gmail.com
+inc0nc3rt
+
+fermorsaDev
+fermorsa@hotmail.com
+inc0nc3rt
+
+https://git-scm.com //Para descargar git...
+
+-------------------En Git Bash----------------------
+Control de versiones
+
+
+//Dar de alta al usuario
+git config --global user.name "fermorsa"
+
+//Visualizar configuracion de usuario
+git config --global user.name
+
+//Cambiar nombre al usuario
+git config --global user.name "otro nombre"
+
+//Dar de alta email de usuario
+git config --global user.email "fermorsa@gmail.com"
+
+//Para visualizarlo
+git config --global user.email
+
+//Resultados con distintos colores.
+git config --global color.ui true
+
+//listar mi configuracion
+git config --global --list
+
+--------------------Iniciamos-------------------
+//Empieza a monitorear todos los cambios
+git init 
+
+//limpiar pantalla...
+clear
+
+//Status de nuestro proyecto..
+git status
+
+//agregar todos los elementos..
+git add -A
+
+//agregar elementos a git..
+git add styles.css
+
+//Guardamos los cambios con un mensaje
+//para identificarlos...
+git commit -m "Mensaje"
+
+//Añadimos todos los elementos..
+git add -A
+
+//Guardamos los cambios con un mensaje
+git commit -m "Se actualizo Program.cs"
+
+//Ver historial de commit
+git log
+
+//Viajar en el tiempo
+git checkout 3d5455ead7df9d30d8a0fc19b616457ca9625b5c
+
+//Mueveme al ultimo commit
+git checkout master
+
+//Regresar a una version anterior para siempre
+git reset --soft //No toca codigo
+git reset --mixed //Elimina "Staging Area" sin tocar "Working Area".
+git reset --hard //Borra adsolutamente todo lo que hay en el commit.
+
+//Enviar el log a un archivo .txt.
+git log > commits.txt
+
+//Elimina el commit indicado pero el codigo no lo toca..
+git reset --soft 838ea795b078736656ccd0266e1ab3a82dacac1a
+
+//Borra codigo y elimina commit. Elimina todo..
+git reset --hard 838ea795b078736656ccd0266e1ab3a82dacac1a
+
+//Ayuda
+git help status
+
+
+Head --> Es en el commit donde nos encontramos
+
+Ramas -->Linea de tiempo en nuestro projecto.
+
+	Rama Master
+
+//Nos muestra las ramas...
+git branch
+
+//Crear una rama
+git branch Test
+
+
+//git checkout  Tambien nos permite 
+//moverno entre ramas
+git checkout Test
+
+//Borrar rama
+git branch -d Test
+git branch -D OtherBranch //Si funciono
+
+//Fusiones Creacion de un nuevo commit
+//juntando una rama con otra.
+git checkout master
+
+
+//Para fusionar
+git merge Test
+
+
+	//Fast-Forward Simple y automatico
+	//Manual Merge Largo y manual
+
+//Crear rama y moverse a ella
+git checkout -b Text
+
+
+-----------------Github------------------
+
+Es una plataforma donde nosotros podemos
+guardar nuestro proyectos, usando git
+para su gestion.
+
+Comenzamos...
+
+fermorsa@gmail.com
+inc0nc3rt
+
+------------------------------------------
+Descargar proyecto de jquery a mi pc local
+
+La direccion web es:
+https://github.com/jquery/jquery
+
+Estoy dentro de mi espacion de Github....
+
+1.Ubicarse en la carpeta en donde quieres
+que se descargue el proyecto.
+
+En este caso en:
+E:\ProjectGit\clonarJquery
+
+2. git clone https://github.com/jquery/jquery.git
+
+------------------------------------------
+
+
+------------------------------------------
+Subir nuestro proyecto a github
+
+//git remote //vincula nuestro proyecto local,
+//con nuestro proyecto remoto.
+
+git remote add origin https://github.com/fermorsa/ActiveDirectory.git
+
+//para comprobar que nuestros proyectos
+//estan ligados
+git remote -v
+
+
+//para eliminar la coneccion de nuestro proyecto 
+//local con el remoto..
+git remote remove origin
+
+//Comprobamos que se removio
+git remote -v
+
+//pasar nuestro proyecto a github
+git push origin master
+
+//Vamos hacer un cambio y subirlo...
+//Procedemos a sincronizar..
+0. git status //ver lo que hicimos...
+1. git add -A //añadimos..
+2. git commit -m  "Cambios en el proyecto"
+3. git log //vemos el commit...
+4. git push origin master //Sincronizamos a la nube
+
+
+//vamos a crear una nueva rama
+git branch OtherBranch
+git checkout OtherBranch
+git log
+
+//Realizamo commit...
+git add -A
+git commit -m "Change in console.cs"
+
+//subir esta rama github...
+git push origin Test
+
+------------------------------------------
+
+
+---------------------Issues github--------------
+//Son una forma continuar, mejorar o solucionar
+//un error en nuestros repositorios (proyectos).
+------------------------------------------
+
+---------------------Milestones github-----------
+//Son grupos de issues que aplican para un 
+//proyecto, caracteristica o periodo de tiempo.
+------------------------------------------
+
+---------------------Labels github-----------
+//Son una manera de organizar diferentes tipos
+//de problemas.
+------------------------------------------
+
+//Cambiar el contenido del mensaje -m del commit
+git commit --amend -m "Cambio en h3"
+
+git push origin master -f //fuerza a que suban
+//los cambios. Por los que commite son iguales.
+
+---------------------Tags-----------------
+//Tags Son simples puntos especificos en la
+//historia de nuestro proyecto y se usan
+//para marcar alguna versión del mismo.
+
+/*Especificarle a los commit las versiones de
+nuestros proyectos...*/
+
+//Tags ligeras, son otra forma de crear tags,
+//mas simples y con poca informacion.
+git tag v1.0
+
+//Las  tags anotadas son almacenadas como
+//objetos completos dentro de la base de Git
+//y contienen más información.
+git tag -a v1.0 -m "Mensaje"
+
+
+git tag -a v0.8 -m "Version 0.1 proyecto" 3d5455ead7df9d30d8a0fc19b616457ca9625b5c
+git tag -a v0.1 -m "Version 0.1 proyecto" 3d5455ead7df9d30d8a0fc19b616457ca9625b5c
+git tag -a v0.2 -m "Version 0.2 proyecto" 838ea795b078736656ccd0266e1ab3a82dacac1a
+
+//Para crear un tag in github usuamos:
+git push origin v0.1
+git push origin v0.2
+
+//Subir todos los tags para no subir 1 to 1..
+git push origin --tags
+
+//Siguiente clase Workflows
+/*Proyectos propios -- Somos los dueños, decidimos
+todo lo que pasa en el repositorio.*/
+
+/*
+Proyectos en equipo Es parecido a trabajar solo, con
+la excepcion de que habrá commits de nuestro equipo.
+*/
+
+---------------------Workflows-----------------
+/*Flujos de trabajo
+-Proyectos propios
+-Proyectos en equipo
+-Proyectos con terceros
+*/
+
+
+git fetch & git merge
+
+/*---------------Proyectos en equipo---------------
+1. Crear una nueva organizacion en github icono (+)
+name group --> comunidadFermorsa 
+billing email --> fermorsa@gmail.com
+
+2. Agregar quienes forman parte del grupo.
+
+En este caso --> fermorsaDev el otro usuario 
+que se creo.
+
+3. fermorsaDev tiene que abrir su email y aceptar
+la invitacion de unirse al equipo de fermorsa.
+
+4. fermorsaDev no puede crear repositorios
+le vamos a dar privilegios.
+
+fermorsa le tiene que dar clic al perfil de
+omar y darle mas privilegios.
+
+Cambiar el rol --> Owner
+
+5. Recordemos que mi respositorio esta en mi
+perfil fermorsa.
+
+Entonces vamos a transferir este repositorio
+al la organizacion
+
+-Entrar a mi perfil/Repositorio
+/seleccionar repositorio/configuracion
+/Transfer
+
+name of the repository--->ActiveDirectory
+organization name--> comunidadFermorsa
+
+6. Ahora fermorsaDev debe bajar el repositorio
+ActiveDirectory
+
+-Lo puede realizar desde la consola con el gitbash
+Tecleando:
+
+git clone https://github.com/comunidadFermorsa/ActiveDirectory.git
+
+Ahora fermorsaDev ya tiene el repositorio
+
+//Muestra ramas ocultas
+
+Nota: Cuando nosotros conectamos el repositorio local
+con el repositorio remoto, hay una rama oculta y
+prácticamente es un espejo entre estos dos
+(Idéntico a master)
+
+git branch -a
+
+Tenemos el siguiente escenario:
+
+master 		* --> * --> *[Commit fermorsaDev] 
+origin/master	* --> *
+master		* --> *	--> *[Commit fermorsa]
+
+git fetch origin [Descargamos a origin/master]
+//Todavia no se encuentra en nuestro local
+//Para eso empleamos el siguiente comando:
+git merge origin/master
+
+Primero tenemos que crear la coneccion al repositorio
+
+1. Creamos la coneccion
+
+git remote add origin https://github.com/comunidadFermorsa/ActiveDirectory.git
+
+2. comprobamos la coneccion
+
+git remote -v
+
+2. sincronizamos el proyecto del origen[Repositorio-Local]
+	git fetch origin
+
+
+3. [fermorsaDev] subio cambios al repositorio de productivo.
+
+git push origin master
+
+4. Debo eliminar y actualizar el origin [fermorsa]
+git remote remove origin //Elimine el origin
+
+git remote add origin https://github.com/comunidadFermorsa/ActiveDirectory.git
+git remote -v
+
+--------------------Fermorsa baja archivos----------------------------
+git fetch origin //Los cambios en la rama oculta..
+git merge origin/master //cambios de la rama oculta a master.
+
+
+
+*/
